@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js",
+    "devStart": "nodemon ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,11 +19,11 @@
   },
   "homepage": "https://github.com/omerfarukkanli/skydome-backend#readme",
   "dependencies": {
-    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.9.2"
   },
   "devDependencies": {
+    "dotenv": "^16.0.3",
     "nodemon": "^2.0.20"
   }
 }
