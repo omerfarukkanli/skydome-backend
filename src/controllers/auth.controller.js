@@ -9,6 +9,6 @@ module.exports = {
     };
     const user = await User.find(userBody);
     if (!user) console.log(message);
-    res.send(user._id);
+    res.send(user);
   },
 };
