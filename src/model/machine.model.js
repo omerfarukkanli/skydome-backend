@@ -7,4 +7,4 @@ const machineSchema = mongoose.Schema({
   machineStopOther: { type: Number, required: true },
 });
 
-module.exports = machineSchema;
+module.exports = mongoose.model("Machine", machineSchema);
