@@ -12,9 +12,12 @@ module.exports = {
         if (result) {
           const token = await jwt.sign({ username: user.username }, secret);
           res.json({ token });
-        } else res.status(400).json({ error: "password doesn't match" });
-      } else res.status(400).json({ error: "User doesn't exist" });
-    } catch (error) {
+        } 
+        else res.status(400).json({ error: "password doesn't match" });
+      } 
+      else res.status(400).json({ error: "User doesn't exist" });
+    } 
+    catch (error) {
       res.status(400).json({ error });
     }
   },

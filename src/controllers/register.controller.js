@@ -1,6 +1,7 @@
 const User = require("../model/user.model");
 const bcrypt = require("bcrypt");
 const Machine = require("../model/machine.model");
+
 module.exports = {
   async register(req, res) {
     try {
