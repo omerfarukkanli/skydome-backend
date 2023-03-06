@@ -1,11 +1,16 @@
 const User = require("../model/user.model");
-
+const Machine = require("../model/machine.model");
 module.exports = {
   async getAllMachine(req, res) {
-    var id = req.params.id;
-    if (!id) return res.send("Cannot find user");
+    const id = req.params.id;
     const user = await User.findById(id);
-    res.send(user.machines);
-  
+    res.send(user)
+  },
+  async getMachineById(req, res) {
+    let id = req.params.id;
+    let machineId = req.params.machineId;
+    const user = await User.findById(id);
+    const machine = await Machine.findById(machineId);
+    res.send(machine);
   },
 };
