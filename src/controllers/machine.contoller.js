@@ -1,16 +1,17 @@
-const User = require("../model/user.model");
+
 const Machine = require("../model/machine.model");
 module.exports = {
   async getAllMachine(req, res) {
-    const id = req.params.id;
-    const user = await User.findById(id);
-    res.send(user)
+    const machine = await Machine.find()
+    res.send(machine);
   },
   async getMachineById(req, res) {
-    let id = req.params.id;
-    let machineId = req.params.machineId;
-    const user = await User.findById(id);
-    const machine = await Machine.findById(machineId);
+    const _id = req.params.id;
+    const machine = await Machine.findById(_id);
     res.send(machine);
+  },
+  async createMachine(req, res) {
+    const machine = await Machine.create(req.body);
+    res.json(machine);
   },
 };
