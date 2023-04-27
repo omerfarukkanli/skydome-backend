@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const { dbUrl } = require("../config");
 
+
+
 module.exports = {
   connect() {
     mongoose.set("strictQuery", true);
