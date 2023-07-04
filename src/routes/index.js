@@ -1,7 +1,7 @@
 const express = require("express");
 const mach = require("./machine.router");
-const auth = require("./auth.router");
-const regs = require("./register.router");
+const auth = require("./user.router");
+
 
 const router = express.Router();
 

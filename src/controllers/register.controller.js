@@ -1,11 +1,11 @@
 const User = require("../model/user.model");
-const bcrypt = require("bcrypt");
 const Machine = require("../model/machine.model");
+const { bycryptHash } = require("../services/tokenServices")
 
 module.exports = {
   async register(req, res) {
     try {
-      req.body.password = await bcrypt.hash(req.body.password, 10);
+      req.body.password = await bycryptHash(req.body.password);
       const user = new User(req.body);
       for (let index = 0; index < 5; index++) {
         const machine = new Machine({
